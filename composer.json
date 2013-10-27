@@ -1,0 +1,27 @@
+{
+    "name": "sethington/php-phabricator-api",
+    "type": "library",
+    "description": "PHP wrapp for Phabricator's Conduit API",
+    "homepage": "https://github.com/sethington/php-phabricator-api",
+    "keywords": ["phabricator", "conduit", "api"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Seth Steele",
+            "email": "sethsteele@gmail.com",
+            "homepage": "http://github.com/sethington"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "ext-curl": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Phabricator": "lib/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin/"
+    }
+}
