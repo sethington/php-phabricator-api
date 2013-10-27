@@ -5,19 +5,19 @@ namespace Phabricator;
 class Client{
 
 	var $client = "php-phabricator-api",
-		$client_version = "0.0.1",
+        $client_version = "0.0.1",
 
-		$url = null,
-		$auth_certificate = null,
-		$auth_user = null,
-		$port = 80,
+        $url = null,
+        $auth_certificate = null,
+        $auth_user = null,
+        $port = 80,
 
-		$session_key = null,
-		$connection_id = null,
+        $session_key = null,
+        $connection_id = null,
 
-		$apis = array(); // hold api obj references
+        $apis = array(); // hold api obj references
 
-	public function __construct($url, $auth_user, $auth_certificate)
+    public function __construct($url, $auth_user, $auth_certificate)
     {
         $this->url = $url;
         $this->auth_certificate = $auth_certificate;
@@ -30,15 +30,12 @@ class Client{
     {
         if (!isset($this->apis[$name])) {
             switch ($name) {
-
                 case 'diffs':
                     $api = new Api\Differential($this);
                     break;
-
                 case 'users':
                 	$api = new Api\User($this);
                 	break;
-
                 default:
                     throw new \InvalidArgumentException();
             }
@@ -52,8 +49,8 @@ class Client{
     // Retrieves an initial connection ID and session key for future API requests
     private function getSessionKey()
     {
-    	$time = time(); // UTC time in seconds
-    	$data = array();
+        $time = time(); // UTC time in seconds
+        $data = array();
 
     	$data['client'] = $this->client;
     	$data['clientVersion'] = $this->client_version;

@@ -32,7 +32,7 @@ Then create a composer.json file in the root of your project:
 ```yaml
 {
     "require": {
-        "sethington/phabricator-api": "*"
+        "sethington/php-phabricator-api": "*"
     }
 }
 ```
