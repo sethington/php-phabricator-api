@@ -88,7 +88,7 @@ class Client{
         $json = json_decode($response);
         //\Log::info(print_r($json,true));
         if (isset($json->error_info)){
-        	throw new Exception($json->error_info);
+        	throw new \Exception($json->error_info);
         }
 
         $this->connection_id = $json->result->connectionID;
