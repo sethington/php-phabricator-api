@@ -2,10 +2,10 @@
 
 namespace Phabricator\Api;
 
-class User extends AbstractApi{
+class User extends Api{
 
 	public function query($params = array()){
-		return $this->post('user.query',$params);	
+		return $this->client->request('user.query', "POST", $params);
 	}
 	
 }
