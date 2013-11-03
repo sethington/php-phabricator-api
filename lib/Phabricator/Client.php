@@ -30,9 +30,11 @@ class Client{
     {
         if (!isset($this->apis[$name])) {
             switch ($name) {
+                case "diff":
                 case 'diffs':
                     $api = new Api\Differential($this);
                     break;
+                case "user":
                 case 'users':
                 	$api = new Api\User($this);
                 	break;
